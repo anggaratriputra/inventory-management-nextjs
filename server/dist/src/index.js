@@ -10,6 +10,8 @@ const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
 const helmet_1 = __importDefault(require("helmet"));
 const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
+const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 // ROUTE IMPORTS
 // CONFIGURATIONS
 dotenv_1.default.config();
@@ -23,6 +25,8 @@ app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)());
 // ROUTES
 app.use("/dashboard", dashboardRoutes_1.default);
+app.use("/products", productRoutes_1.default);
+app.use("/users", userRoutes_1.default);
 app.get("/hello", (req, res) => {
     res.send("Hello, World!");
 });

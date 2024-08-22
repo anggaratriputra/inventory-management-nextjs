@@ -5,6 +5,8 @@ import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";  
+import userRoutes from "./routes/userRoutes";  
 
 // ROUTE IMPORTS
 
@@ -23,6 +25,8 @@ app.use(cors());
 // ROUTES
 
 app.use("/dashboard", dashboardRoutes);
+app.use("/products", productRoutes); 
+app.use("/users", userRoutes)
 
 app.get("/hello", (req, res) => {
   res.send("Hello, World!");
